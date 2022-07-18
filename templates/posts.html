@@ -1,0 +1,25 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Posts</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--</body>-->
+<!--</html>-->
+{% extends 'BasicPage.html' %}
+{% block content %}
+<br/>
+<br/>
+<div class="container" style="background-color: Ivory;">
+
+    <ul>
+        {% for post in object_list %}
+        <br/><br/><br/>
+        <li><a href="{% url 'user_information' post.pk %}">{{ post.user }}</a><br/><p>{{ post.text }}</p><br/><strong>{{post.date_created}}</strong></li>
+        <br/>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

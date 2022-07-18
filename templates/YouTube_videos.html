@@ -1,0 +1,24 @@
+{% extends 'BasicPage.html' %}
+{% block content %}
+<div class="form-group">
+    <form>
+        {% csrf_token %}
+        {{ query }}
+        <br/>
+        <a href="{% url 'videos' %}" class="btn btn-outline-secondary">Search</a>
+    </form>
+</div>
+<div class="form-group">
+    <br/>
+    <br/>
+    <iframe width="1080" height="720" src="{{ video }}"></iframe>
+</div>
+<h2>TITLE:   <strong>{{ title }}</strong></h2>
+<h3>{{ views }}</h3>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock content %}
